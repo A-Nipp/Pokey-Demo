@@ -12,6 +12,7 @@ class PokemonDetailViewModel: ObservableObject {
     /// Tracks the Pokemon in the view currently. Note that this property can be changed.
     @Published var model: Pokemon
     
+    /// The initializer for this ViewModel accepts a `Pokemon` as the model.
     init(pokemon: Pokemon) {
         self.model = pokemon
     }

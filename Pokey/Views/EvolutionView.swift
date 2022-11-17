@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// The View for a Pokemon in the evolution gallery. Accepts a `Pokemon` as a paramter and returns a view dispaying that Pokemon with a nice white circle background.
 struct EvolutionView: View {
     let pokemon: Pokemon
     var body: some View {
@@ -21,7 +22,7 @@ struct EvolutionView: View {
             .background(Color.white, in: Circle())
             
             Text(pokemon.name)
-                .font(.title3)
+                .pokeyFont()
         }
     }
     

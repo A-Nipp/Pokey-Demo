@@ -18,7 +18,7 @@ struct PokemonDetailView: View {
                     HStack {
                         pokemonImage
                             .frame(width: geo.size.width / 2)
-                            .padding(.horizontal, 10)
+                            .padding(.leading, 10)
                         summary
                             .padding(.bottom)
                             .padding(.horizontal)
@@ -31,6 +31,7 @@ struct PokemonDetailView: View {
                 
             }
         }
+        .pokeyFont()
     }
     
     
@@ -69,7 +70,7 @@ struct PokemonDetailView: View {
                 }
                 Text("Weaknesses")
                     .bold()
-                LazyVGrid(columns: [GridItem(alignment: .leading), GridItem(alignment: .leading)], spacing: 5) {
+                LazyVGrid(columns: [GridItem(alignment: .leading), GridItem(alignment: .leading)], spacing: 0) {
                     ForEach(vm.weaknesses, id: \.rawValue) { type in
                         Text(type.rawValue)
                     }

@@ -24,6 +24,8 @@
 		164FC71F2925CE69006FE9D3 /* PokedexListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC71E2925CE69006FE9D3 /* PokedexListView.swift */; };
 		164FC7212925CE7A006FE9D3 /* PokedexListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC7202925CE7A006FE9D3 /* PokedexListRowView.swift */; };
 		164FC7232925DBCB006FE9D3 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC7222925DBCB006FE9D3 /* BackgroundColor.swift */; };
+		164FC7282926A032006FE9D3 /* pokey-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 164FC72729269FC2006FE9D3 /* pokey-font.ttf */; };
+		164FC72B2926A104006FE9D3 /* CustomFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC72A2926A104006FE9D3 /* CustomFontModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,9 @@
 		164FC71E2925CE69006FE9D3 /* PokedexListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexListView.swift; sourceTree = "<group>"; };
 		164FC7202925CE7A006FE9D3 /* PokedexListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexListRowView.swift; sourceTree = "<group>"; };
 		164FC7222925DBCB006FE9D3 /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
+		164FC72729269FC2006FE9D3 /* pokey-font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pokey-font.ttf"; sourceTree = "<group>"; };
+		164FC7292926A0B5006FE9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		164FC72A2926A104006FE9D3 /* CustomFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +82,9 @@
 		164FC6F229259DF3006FE9D3 /* Pokey */ = {
 			isa = PBXGroup;
 			children = (
+				164FC7292926A0B5006FE9D3 /* Info.plist */,
 				164FC6F329259DF3006FE9D3 /* PokeyApp.swift */,
+				164FC72629269FB5006FE9D3 /* Fonts */,
 				164FC71529259E94006FE9D3 /* ViewModel */,
 				164FC71429259E90006FE9D3 /* Views */,
 				164FC70129259E46006FE9D3 /* Model */,
@@ -128,6 +135,15 @@
 				164FC71829259F54006FE9D3 /* PokemonViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		164FC72629269FB5006FE9D3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				164FC72729269FC2006FE9D3 /* pokey-font.ttf */,
+				164FC72A2926A104006FE9D3 /* CustomFontModifier.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +206,7 @@
 			files = (
 				164FC6FB29259DF5006FE9D3 /* Preview Assets.xcassets in Resources */,
 				164FC6F829259DF5006FE9D3 /* Assets.xcassets in Resources */,
+				164FC7282926A032006FE9D3 /* pokey-font.ttf in Resources */,
 				164FC70D29259E65006FE9D3 /* pokedex-data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +220,7 @@
 			files = (
 				164FC7212925CE7A006FE9D3 /* PokedexListRowView.swift in Sources */,
 				164FC70C29259E64006FE9D3 /* TypeElement.swift in Sources */,
+				164FC72B2926A104006FE9D3 /* CustomFontModifier.swift in Sources */,
 				164FC71729259EAF006FE9D3 /* PokedexViewModel.swift in Sources */,
 				164FC70E29259E65006FE9D3 /* Pokedex.swift in Sources */,
 				164FC71B2925A588006FE9D3 /* PokemonDetailView.swift in Sources */,
@@ -346,6 +364,7 @@
 				DEVELOPMENT_TEAM = M23G284TD2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pokey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -375,6 +394,7 @@
 				DEVELOPMENT_TEAM = M23G284TD2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pokey/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

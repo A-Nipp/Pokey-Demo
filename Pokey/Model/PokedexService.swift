@@ -19,7 +19,8 @@ class PokedexService {
         PokedexService()
     }
     
-    var pokedex: Pokedex? = nil
+    /// The `Pokedex` for this PokedexService. It will be `nil` if the JSON loading fails.
+    var pokedex: Pokedex?
     
     /// A function that loads the Pokedex data
     func loadPokedex() {

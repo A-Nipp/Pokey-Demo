@@ -8,8 +8,18 @@
 import Foundation
 
 class PokedexViewModel: ObservableObject {
-    @Published var pokemon: [Pokemon]
+    @Published var pokedex: Pokedex?
+    
+    
     init() {
-        pokemon = PokedexService.shared.pokedex?.pokemon ?? []
+        pokedex = PokedexService.shared.pokedex
     }
+    
+    var pokemon: [Pokemon] {
+        return pokedex?.pokemon ?? []
+    }
+    
+    
+    
+    
 }
