@@ -24,7 +24,7 @@ struct PokedexListRowView: View {
             Image(systemName: "chevron.right")
                 .foregroundColor(.black)
         }
-        .font(.custom("PKMN-RBYGSC", size: 20, relativeTo: .title2))
+        .pokeyFont(size: 20, dynamicSize: .title)
     }
 }
 
