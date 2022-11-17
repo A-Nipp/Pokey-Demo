@@ -17,15 +17,16 @@ struct PokemonDetailView: View {
                     title
                     HStack {
                         pokemonImage
-                            .frame(width: geo.size.width / 2)
+                            .frame(width: geo.size.width * 0.4)
                             .padding(.leading, 10)
                         summary
                             .padding(.bottom)
                             .padding(.horizontal)
                     }
+                    .padding(.top)
                     
                     evolutions
-                        .padding(.horizontal)
+                        .padding()
                     
                 }
                 
@@ -40,7 +41,7 @@ struct PokemonDetailView: View {
             Text(vm.name)
             Text(vm.number)
         }
-        .font(.largeTitle)
+        .font(.custom("PKMN-RBYGSC", size: 20, relativeTo: .largeTitle))
     }
     
     var pokemonImage: some View {
@@ -59,17 +60,14 @@ struct PokemonDetailView: View {
                     .bold()
                 Text(vm.height)
                 Text("Weight")
-                    .bold()
                 Text(vm.weight)
                 Text("Type")
-                    .bold()
                 HStack {
                     ForEach(vm.model.type, id: \.rawValue) { type in
                         Text(type.rawValue)
                     }
                 }
                 Text("Weaknesses")
-                    .bold()
                 LazyVGrid(columns: [GridItem(alignment: .leading), GridItem(alignment: .leading)], spacing: 0) {
                     ForEach(vm.weaknesses, id: \.rawValue) { type in
                         Text(type.rawValue)
@@ -79,18 +77,13 @@ struct PokemonDetailView: View {
                 
             }
             Spacer()
-            VStack(alignment: .leading) {
-                
-            }
-            
-            
         }
     }
     
     @ViewBuilder
     var evolutions: some View {
         Text("Evolutions")
-            .font(.title2)
+            .font(.custom("PKMN-RBYGSC", size: 20, relativeTo: .title2))
         HStack(alignment: .top) {
             ForEach(vm.evolutionSeries, id: \.num) { pokemon in
                 Button {

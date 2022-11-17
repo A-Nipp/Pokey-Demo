@@ -20,11 +20,11 @@ struct PokedexListRowView: View {
             }
             Text(pokemon.num)
             Text(pokemon.name)
-                .font(.title3)
             Spacer()
             Image(systemName: "chevron.right")
                 .foregroundColor(.black)
         }
+        .font(.custom("PKMN-RBYGSC", size: 20, relativeTo: .title2))
     }
 }
 
