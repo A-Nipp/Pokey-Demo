@@ -20,11 +20,11 @@ class PokemonDetailViewModel: ObservableObject {
     var name: String {
         return model.name
     }
-    
+    // MARK: Change this disgusting metric.
     var height: String {
         return model.height
     }
-    
+    // MARK: Change this disgusting metric.
     var weight: String {
         return model.weight
     }
@@ -48,27 +48,17 @@ class PokemonDetailViewModel: ObservableObject {
     var weaknesses: [TypeElement] {
         return model.weaknesses
     }
-    
+    // MARK: Computed property getting a list of the Pokemon's next evolutions.
     var nextEvolutions: [Pokemon]? {
-        guard let unwrapped = model.nextEvolution else { return nil }
-        return unwrapped.map {PokedexService.shared.getPokemonFromNum(num: $0.num)}
+        return nil
         
     }
-    
+    // MARK: Computed property getting a list of the Pokemon's previous evolutions.
     var prevEvolutions: [Pokemon]? {
-        guard let unwrapped = model.prevEvolution else { return nil }
-        return unwrapped.map {PokedexService.shared.getPokemonFromNum(num: $0.num)}
+        return nil
     }
-    
+    // MARK: Returns the list of Pokemon in this Pokemon's evolution series. This will be a list of previous evolutions + current form + next evolutions
     var evolutionSeries: [Pokemon] {
-        var out = [Pokemon]()
-        out.append(model)
-        if let prev = prevEvolutions {
-            out = prev + out
-        }
-        if let next = nextEvolutions {
-            out += next
-        }
-        return out
+        return []
     }
 }

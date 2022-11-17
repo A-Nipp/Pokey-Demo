@@ -11,20 +11,17 @@ import SwiftUI
 struct PokemonDetailView: View {
     @StateObject var vm: PokemonDetailViewModel
     var body: some View {
-        GeometryReader { geo in
             ZStack {
                 BackgroundColor()
                 VStack {
                     title
                     HStack {
                         pokemonImage
-                            .frame(width: geo.size.width * 0.4)
-                            .padding(.leading, 10)
+                            .padding()
                         summary
                             .pokeyFont(size: 12, dynamicSize: .body)
                             .padding(.bottom)
                             .padding(.horizontal)
-                        Spacer()
                     }
                     .padding(.top)
                     
@@ -34,7 +31,7 @@ struct PokemonDetailView: View {
                 }
                 
             }
-        }
+        
     }
 
     /// The name of the pokemon and its number
@@ -88,16 +85,7 @@ struct PokemonDetailView: View {
     var evolutions: some View {
         Text("Evolutions")
             .pokeyFont(size: 20, dynamicSize: .title2)
-        HStack(alignment: .top) {
-            ForEach(vm.evolutionSeries, id: \.num) { pokemon in
-                Button {
-                    vm.model = pokemon
-                } label: {
-                    EvolutionView(pokemon: pokemon)
-                }
-                .buttonStyle(.plain)
-            }
-        }
+        // MARK: Add to this. Be sure to use EvolutionView
     }
     
 }
