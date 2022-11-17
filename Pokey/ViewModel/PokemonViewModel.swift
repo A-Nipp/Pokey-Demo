@@ -12,6 +12,7 @@ class PokemonDetailViewModel: ObservableObject {
     
     init(pokemon: Pokemon) {
         self.model = pokemon
+        PokedexService.loadPokedex()
     }
     
     var name: String {
@@ -46,5 +47,28 @@ class PokemonDetailViewModel: ObservableObject {
     
     var weaknesses: [TypeElement] {
         return model.weaknesses
+    }
+    
+    var nextEvolutions: [Pokemon]? {
+        guard let unwrapped = model.nextEvolution else { return nil }
+        return unwrapped.map {PokedexService.getPokemonFromNum(num: $0.num)}
+        
+    }
+    
+    var prevEvolutions: [Pokemon]? {
+        guard let unwrapped = model.prevEvolution else { return nil }
+        return unwrapped.map {PokedexService.getPokemonFromNum(num: $0.num)}
+    }
+    
+    var evolutionSeries: [Pokemon] {
+        var out = [Pokemon]()
+        out.append(model)
+        if let prev = prevEvolutions {
+            out = prev + out
+        }
+        if let next = nextEvolutions {
+            out += next
+        }
+        return out
     }
 }

@@ -22,6 +22,7 @@
 		164FC71729259EAF006FE9D3 /* PokedexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC71629259EAF006FE9D3 /* PokedexViewModel.swift */; };
 		164FC71929259F54006FE9D3 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC71829259F54006FE9D3 /* PokemonViewModel.swift */; };
 		164FC71B2925A588006FE9D3 /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC71A2925A588006FE9D3 /* PokemonDetailView.swift */; };
+		164FC71D2925C93D006FE9D3 /* EvolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC71C2925C93D006FE9D3 /* EvolutionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		164FC71629259EAF006FE9D3 /* PokedexViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexViewModel.swift; sourceTree = "<group>"; };
 		164FC71829259F54006FE9D3 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		164FC71A2925A588006FE9D3 /* PokemonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
+		164FC71C2925C93D006FE9D3 /* EvolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				164FC71A2925A588006FE9D3 /* PokemonDetailView.swift */,
+				164FC71C2925C93D006FE9D3 /* EvolutionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				164FC70E29259E65006FE9D3 /* Pokedex.swift in Sources */,
 				164FC71B2925A588006FE9D3 /* PokemonDetailView.swift in Sources */,
 				164FC71029259E65006FE9D3 /* Evolution.swift in Sources */,
+				164FC71D2925C93D006FE9D3 /* EvolutionView.swift in Sources */,
 				164FC71229259E65006FE9D3 /* Pokemon.swift in Sources */,
 				164FC71929259F54006FE9D3 /* PokemonViewModel.swift in Sources */,
 				164FC70F29259E65006FE9D3 /* Egg.swift in Sources */,

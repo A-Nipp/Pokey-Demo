@@ -8,5 +8,7 @@
 import Foundation
 
 class PokedexViewModel: ObservableObject {
-    var pokedex = PokedexService.getPokedexFromJSON()
+    var pokedex = PokedexService()
+    
+    
 }

@@ -31,6 +31,12 @@ struct Pokemon: Codable {
         case nextEvolution = "next_evolution"
         case prevEvolution = "prev_evolution"
     }
+    
+    var imageURL: URL? {
+        let http = img
+        let https = "https" + http.dropFirst(4)
+        return URL(string: https)
+    }
 }
 
 extension Pokemon {

@@ -47,16 +47,24 @@ struct PokemonDetailView: View {
                     
                 }
                 .padding()
+                Text("Evolutions")
+                    .font(.title2)
+                HStack {
+                    ForEach(vm.evolutionSeries, id: \.num) {
+                        EvolutionView(pokemon: $0)
+                    }
+                }
                 
             }
+            
         }
     }
-    
-    @ViewBuilder
-    var title: some View {
-        HStack {
-            Text(vm.name)
-            Text(vm.number)
+
+
+var title: some View {
+    HStack {
+        Text(vm.name)
+        Text(vm.number)
         }
         .font(.largeTitle)
     }
@@ -77,5 +85,8 @@ struct PokemonDetailView_Previews: PreviewProvider {
         PokemonDetailView()
     }
 }
+
+
+
 
 

@@ -7,7 +7,14 @@
 
 import Foundation
 
- class PokedexService {
+class PokedexService {
+    
+    static var pokedex: Pokedex? = nil
+    
+    static func loadPokedex() {
+        PokedexService.pokedex = getPokedexFromJSON()
+    }
+    
     static func getPokedexFromJSON() -> Pokedex? {
         guard let url = Bundle.main.url(forResource: "pokedex-data", withExtension: "json") else {
             return nil
@@ -19,4 +26,9 @@ import Foundation
         return data
         
     }
+    
+    static func getPokemonFromNum(num: String) -> Pokemon {
+        return pokedex!.pokemon.first(where: {$0.num == num})!
+    }
+    
 }
