@@ -10,20 +10,25 @@ import SwiftUI
 struct PokemonDetailView: View {
     @StateObject var vm: PokemonDetailViewModel
     var body: some View {
-        ZStack {
-            BackgroundColor()
-            VStack {
-                title
-                pokemonImage
-                    .padding(.horizontal, 50)
-                summary
-                    .padding(.bottom)
-                    .padding(.horizontal)
-                evolutions
-                    .padding(.horizontal)
+        GeometryReader { geo in
+            ZStack {
+                BackgroundColor()
+                VStack {
+                    title
+                    HStack {
+                        pokemonImage
+                            .frame(width: geo.size.width / 2)
+                        summary
+                            .padding(.bottom)
+                            .padding(.horizontal)
+                    }
+                    
+                    evolutions
+                        .padding(.horizontal)
+                    
+                }
                 
             }
-            
         }
     }
     
@@ -47,16 +52,13 @@ struct PokemonDetailView: View {
     
     var summary: some View {
         HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text("Height")
                     .bold()
                 Text(vm.height)
                 Text("Weight")
                     .bold()
                 Text(vm.weight)
-            }
-            Spacer()
-            VStack(alignment: .leading) {
                 Text("Type")
                     .bold()
                 HStack {
@@ -66,11 +68,17 @@ struct PokemonDetailView: View {
                 }
                 Text("Weaknesses")
                     .bold()
-                HStack {
+                LazyVGrid(columns: [GridItem(alignment: .leading), GridItem(alignment: .leading)], spacing: 5) {
                     ForEach(vm.weaknesses, id: \.rawValue) { type in
                         Text(type.rawValue)
                     }
                 }
+                
+                
+            }
+            Spacer()
+            VStack(alignment: .leading) {
+                
             }
             
             
