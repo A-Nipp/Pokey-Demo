@@ -17,6 +17,9 @@ struct EvolutionView: View {
             } placeholder: {
                 ProgressView()
             }
+            .padding()
+            .background(Color.white, in: Circle())
+            
             Text(pokemon.name)
                 .font(.title3)
         }
@@ -26,6 +29,11 @@ struct EvolutionView: View {
 }
 struct EvolutionView_Previews: PreviewProvider {
     static var previews: some View {
-        EvolutionView(pokemon: .example)
+        ZStack {
+            Color.yellow
+                .opacity(0.2)
+                .ignoresSafeArea()
+            EvolutionView(pokemon: .example)
+        }
     }
 }
