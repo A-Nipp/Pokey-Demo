@@ -16,6 +16,7 @@ struct PokedexListView: View {
                 ScrollView {
                     logo
                     LazyVStack {
+                        Divider()
                         ForEach(vm.pokemon, id: \.num) { pokemon in
                             NavigationLink(destination: PokemonDetailView(vm: PokemonDetailViewModel(pokemon: pokemon))) {
                                 PokedexListRowView(pokemon: pokemon)

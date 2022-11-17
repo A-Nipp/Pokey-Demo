@@ -16,6 +16,7 @@ struct PokedexListRowView: View {
                     .scaledToFit()
             } placeholder: {
                 ProgressView()
+                    .frame(height:50)
             }
             Text(pokemon.num)
             Text(pokemon.name)

@@ -40,9 +40,7 @@ class PokemonDetailViewModel: ObservableObject {
     }
         
     var imageURL: URL? {
-        let http = model.img
-        let https = "https" + http.dropFirst(4)
-        return URL(string: https)
+        return model.imageURL
     }
     
     var weaknesses: [TypeElement] {

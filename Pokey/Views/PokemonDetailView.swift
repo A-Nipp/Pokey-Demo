@@ -15,6 +15,7 @@ struct PokemonDetailView: View {
             VStack {
                 title
                 pokemonImage
+                    .padding(.horizontal, 50)
                 summary
                     .padding(.bottom)
                     .padding(.horizontal)
@@ -80,7 +81,7 @@ struct PokemonDetailView: View {
     var evolutions: some View {
         Text("Evolutions")
             .font(.title2)
-        HStack {
+        HStack(alignment: .top) {
             ForEach(vm.evolutionSeries, id: \.num) { pokemon in
                 Button {
                     vm.model = pokemon
