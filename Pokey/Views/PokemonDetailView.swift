@@ -18,6 +18,7 @@ struct PokemonDetailView: View {
                     HStack {
                         pokemonImage
                             .frame(width: geo.size.width / 2)
+                            .padding(.horizontal, 10)
                         summary
                             .padding(.bottom)
                             .padding(.horizontal)
