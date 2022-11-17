@@ -12,12 +12,9 @@ struct PokedexListView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.yellow
-                    .opacity(0.2)
-                    .ignoresSafeArea()
+                BackgroundColor()
                 ScrollView {
-                    Image("pokey-logo")
-                        .resizable()
+                    logo
                     LazyVStack {
                         ForEach(vm.pokemon, id: \.num) { pokemon in
                             NavigationLink(destination: PokemonDetailView(vm: PokemonDetailViewModel(pokemon: pokemon))) {
@@ -32,6 +29,13 @@ struct PokedexListView: View {
                 .padding()
             }
         }
+    }
+    
+    var logo: some View {
+        Image("pokey-logo")
+            .resizable()
+            .scaledToFit()
+            .padding(.horizontal, 50)
     }
 }
 

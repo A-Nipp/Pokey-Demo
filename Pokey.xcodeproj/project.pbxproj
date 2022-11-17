@@ -24,6 +24,7 @@
 		164FC71D2925C93D006FE9D3 /* EvolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC71C2925C93D006FE9D3 /* EvolutionView.swift */; };
 		164FC71F2925CE69006FE9D3 /* PokedexListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC71E2925CE69006FE9D3 /* PokedexListView.swift */; };
 		164FC7212925CE7A006FE9D3 /* PokedexListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC7202925CE7A006FE9D3 /* PokedexListRowView.swift */; };
+		164FC7232925DBCB006FE9D3 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FC7222925DBCB006FE9D3 /* BackgroundColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		164FC71C2925C93D006FE9D3 /* EvolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionView.swift; sourceTree = "<group>"; };
 		164FC71E2925CE69006FE9D3 /* PokedexListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexListView.swift; sourceTree = "<group>"; };
 		164FC7202925CE7A006FE9D3 /* PokedexListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexListRowView.swift; sourceTree = "<group>"; };
+		164FC7222925DBCB006FE9D3 /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				164FC71C2925C93D006FE9D3 /* EvolutionView.swift */,
 				164FC71E2925CE69006FE9D3 /* PokedexListView.swift */,
 				164FC7202925CE7A006FE9D3 /* PokedexListRowView.swift */,
+				164FC7222925DBCB006FE9D3 /* BackgroundColor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				164FC70E29259E65006FE9D3 /* Pokedex.swift in Sources */,
 				164FC71B2925A588006FE9D3 /* PokemonDetailView.swift in Sources */,
 				164FC71029259E65006FE9D3 /* Evolution.swift in Sources */,
+				164FC7232925DBCB006FE9D3 /* BackgroundColor.swift in Sources */,
 				164FC71D2925C93D006FE9D3 /* EvolutionView.swift in Sources */,
 				164FC71229259E65006FE9D3 /* Pokemon.swift in Sources */,
 				164FC71F2925CE69006FE9D3 /* PokedexListView.swift in Sources */,

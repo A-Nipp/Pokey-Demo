@@ -21,6 +21,8 @@ struct PokedexListRowView: View {
             Text(pokemon.name)
                 .font(.title3)
             Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundColor(.black)
         }
     }
 }
