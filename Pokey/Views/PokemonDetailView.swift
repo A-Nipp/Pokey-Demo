@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A detailed view of a `Pokemon` that displays an image and some other information
 struct PokemonDetailView: View {
     @StateObject var vm: PokemonDetailViewModel
     var body: some View {
@@ -20,6 +21,7 @@ struct PokemonDetailView: View {
                             .frame(width: geo.size.width * 0.4)
                             .padding(.leading, 10)
                         summary
+                            .pokeyFont(size: 12, dynamicSize: .body)
                             .padding(.bottom)
                             .padding(.horizontal)
                     }
@@ -32,18 +34,18 @@ struct PokemonDetailView: View {
                 
             }
         }
-        .pokeyFont()
     }
-    
-    
+
+    /// The name of the pokemon and its number
     var title: some View {
         HStack {
             Text(vm.name)
             Text(vm.number)
         }
-        .font(.custom("PKMN-RBYGSC", size: 20, relativeTo: .largeTitle))
+        .pokeyFont(size: 20, dynamicSize: .largeTitle)
     }
     
+    /// The image of the Pokemon, retrieved from a web URL using `AsyncImage`
     var pokemonImage: some View {
         AsyncImage(url: vm.imageURL) { image in image
                 .resizable()
@@ -53,6 +55,7 @@ struct PokemonDetailView: View {
         }
     }
     
+    /// The data/types of the `Pokemon`
     var summary: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
@@ -80,10 +83,11 @@ struct PokemonDetailView: View {
         }
     }
     
+    /// The evolutionary forms of this `Pokemon`
     @ViewBuilder
     var evolutions: some View {
         Text("Evolutions")
-            .font(.custom("PKMN-RBYGSC", size: 20, relativeTo: .title2))
+            .pokeyFont(size: 20, dynamicSize: .title2)
         HStack(alignment: .top) {
             ForEach(vm.evolutionSeries, id: \.num) { pokemon in
                 Button {

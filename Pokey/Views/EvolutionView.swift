@@ -20,9 +20,10 @@ struct EvolutionView: View {
             }
             .padding()
             .background(Color.white, in: Circle())
+            .padding(.bottom)
             
             Text(pokemon.name)
-                .pokeyFont()
+                .pokeyFont(size: 14, dynamicSize: .body)
         }
     }
     
