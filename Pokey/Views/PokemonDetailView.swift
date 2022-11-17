@@ -50,8 +50,13 @@ struct PokemonDetailView: View {
                 Text("Evolutions")
                     .font(.title2)
                 HStack {
-                    ForEach(vm.evolutionSeries, id: \.num) {
-                        EvolutionView(pokemon: $0)
+                    ForEach(vm.evolutionSeries, id: \.num) { pokemon in
+                        Button {
+                            vm.model = pokemon
+                        } label: {
+                            EvolutionView(pokemon: pokemon)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
                 

@@ -8,7 +8,7 @@
 import Foundation
 
 class PokemonDetailViewModel: ObservableObject {
-    var model: Pokemon
+    @Published var model: Pokemon
     
     init(pokemon: Pokemon) {
         self.model = pokemon

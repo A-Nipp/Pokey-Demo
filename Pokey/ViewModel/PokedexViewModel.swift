@@ -8,7 +8,9 @@
 import Foundation
 
 class PokedexViewModel: ObservableObject {
-    var pokedex = PokedexService()
-    
-    
+    @Published var pokemon: [Pokemon]
+    init() {
+        PokedexService.loadPokedex()
+        pokemon = PokedexService.pokedex?.pokemon ?? []
+    }
 }
