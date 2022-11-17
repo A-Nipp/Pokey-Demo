@@ -19,7 +19,9 @@ struct Pokemon: Codable {
     let multipliers: [Double]?
     let weaknesses: [TypeElement]
     let nextEvolution, prevEvolution: [Evolution]?
-
+    
+    
+    /// The `CodingKeys` enum helps translate the JSON property names to our Swift variable names. For example, the property called "candy_count"_ in the JSON data is called `candyCount` in our struct.
     enum CodingKeys: String, CodingKey {
         case id, num, name, img, type, height, weight, candy
         case candyCount = "candy_count"
@@ -32,6 +34,7 @@ struct Pokemon: Codable {
         case prevEvolution = "prev_evolution"
     }
     
+    /// This is  a computed property that changes the HTTP URLs to HTTPS. Nothing really fancy here: it literally just replaces HTTP with HTTPS in the URL string.
     var imageURL: URL? {
         let http = img
         let https = "https" + http.dropFirst(4)

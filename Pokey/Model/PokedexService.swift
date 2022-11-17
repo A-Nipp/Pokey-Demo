@@ -7,15 +7,27 @@
 
 import Foundation
 
+/// A static service class that holds the `Pokedex` data stuct used for this app.
 class PokedexService {
     
-    static var pokedex: Pokedex? = nil
-    
-    static func loadPokedex() {
-        PokedexService.pokedex = getPokedexFromJSON()
+    init() {
+        loadPokedex()
     }
     
-    static func getPokedexFromJSON() -> Pokedex? {
+    /// The shared `PokedexService` instance for the entire app. It is `nil` when the app first launches. The method `loadPokedex()` must be called to read the JSON in and set this variable equal to the decoded JSON object.
+    static var shared: PokedexService {
+        PokedexService()
+    }
+    
+    var pokedex: Pokedex? = nil
+    
+    /// A function that loads the Pokedex data
+    func loadPokedex() {
+        pokedex = getPokedexFromJSON()
+    }
+    
+    /// The function that actually reads the JSON Pokedex object. It returns an optional type `Pokedex?` because there is a chance the data could be corrupted, decoding could fail, etc.
+    func getPokedexFromJSON() -> Pokedex? {
         guard let url = Bundle.main.url(forResource: "pokedex-data", withExtension: "json") else {
             return nil
         }
@@ -27,7 +39,9 @@ class PokedexService {
         
     }
     
-    static func getPokemonFromNum(num: String) -> Pokemon {
+    /// A method that searches the Pokdex for the `Pokemon` with the matching `num: String` propery
+    /// Uses the .first(where: ()) method.
+    func getPokemonFromNum(num: String) -> Pokemon {
         return pokedex!.pokemon.first(where: {$0.num == num})!
     }
     

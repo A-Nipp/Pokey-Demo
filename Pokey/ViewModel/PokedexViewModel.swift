@@ -10,7 +10,6 @@ import Foundation
 class PokedexViewModel: ObservableObject {
     @Published var pokemon: [Pokemon]
     init() {
-        PokedexService.loadPokedex()
-        pokemon = PokedexService.pokedex?.pokemon ?? []
+        pokemon = PokedexService.shared.pokedex?.pokemon ?? []
     }
 }

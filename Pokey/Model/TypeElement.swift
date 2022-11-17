@@ -1,5 +1,6 @@
 import Foundation
 
+/// The data type for a Pokemon's type. Note that the name of the type can be accessed using the `rawValue` of the enum, which is of type `String`.
 enum TypeElement: String, Codable {
     case bug = "Bug"
     case dark = "Dark"

@@ -7,12 +7,13 @@
 
 import Foundation
 
+/// The ViewModel for a PokemonDetailView. It has one Published property, which is the model of the Pokemon currently in the view.
 class PokemonDetailViewModel: ObservableObject {
+    /// Tracks the Pokemon in the view currently. Note that this property can be changed.
     @Published var model: Pokemon
     
     init(pokemon: Pokemon) {
         self.model = pokemon
-        PokedexService.loadPokedex()
     }
     
     var name: String {
@@ -49,13 +50,13 @@ class PokemonDetailViewModel: ObservableObject {
     
     var nextEvolutions: [Pokemon]? {
         guard let unwrapped = model.nextEvolution else { return nil }
-        return unwrapped.map {PokedexService.getPokemonFromNum(num: $0.num)}
+        return unwrapped.map {PokedexService.shared.getPokemonFromNum(num: $0.num)}
         
     }
     
     var prevEvolutions: [Pokemon]? {
         guard let unwrapped = model.prevEvolution else { return nil }
-        return unwrapped.map {PokedexService.getPokemonFromNum(num: $0.num)}
+        return unwrapped.map {PokedexService.shared.getPokemonFromNum(num: $0.num)}
     }
     
     var evolutionSeries: [Pokemon] {
