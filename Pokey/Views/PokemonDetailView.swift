@@ -24,6 +24,7 @@ struct PokemonDetailView: View {
                             .pokeyFont(size: 12, dynamicSize: .body)
                             .padding(.bottom)
                             .padding(.horizontal)
+                        Spacer()
                     }
                     .padding(.top)
                     
@@ -79,7 +80,6 @@ struct PokemonDetailView: View {
                 
                 
             }
-            Spacer()
         }
     }
     
