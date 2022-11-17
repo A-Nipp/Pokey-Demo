@@ -45,6 +45,6 @@ class PokemonDetailViewModel: ObservableObject {
     }
     
     var weaknesses: [TypeElement] {
-        return model.weaknesses ?? []
+        return model.weaknesses
     }
 }

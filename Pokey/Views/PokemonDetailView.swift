@@ -11,18 +11,12 @@ struct PokemonDetailView: View {
     @StateObject var vm =  PokemonDetailViewModel(pokemon: .example)
     var body: some View {
         ZStack {
+            Color.yellow
+                .opacity(0.2)
+                .ignoresSafeArea()
             VStack {
-                HStack {
-                    Text(vm.name)
-                    Text(vm.number)
-                }
-                .font(.largeTitle)
-                AsyncImage(url: vm.imageURL) { image in image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
+                title
+                pokemonImage
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Height")
@@ -58,6 +52,23 @@ struct PokemonDetailView: View {
         }
     }
     
+    @ViewBuilder
+    var title: some View {
+        HStack {
+            Text(vm.name)
+            Text(vm.number)
+        }
+        .font(.largeTitle)
+    }
+    
+    var pokemonImage: some View {
+        AsyncImage(url: vm.imageURL) { image in image
+                .resizable()
+                .scaledToFit()
+        } placeholder: {
+            ProgressView()
+        }
+    }
     
 }
 

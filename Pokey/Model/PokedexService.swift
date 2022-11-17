@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum PokedexService {
-    static func getExamplesFromJSON() -> Pokedex? {
+ class PokedexService {
+    static func getPokedexFromJSON() -> Pokedex? {
         guard let url = Bundle.main.url(forResource: "pokedex-data", withExtension: "json") else {
             return nil
         }
